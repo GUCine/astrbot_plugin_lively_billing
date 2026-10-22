@@ -1,0 +1,9 @@
+name: astrbot_plugin_lively_billing
+display_name: DeepSeek 用量帳本
+desc: DeepSeek 餘額每小時記帳：每天真實花費、聊天/後臺/畫圖分項、餘額不足私信主人
+version: 2.0.0
+author: GUCine
+repo: https://github.com/GUCine/astrbot_plugin_lively_billing
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.29.0"

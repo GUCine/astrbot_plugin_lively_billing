@@ -1,0 +1,59 @@
+{
+  "providers": {
+    "description": "要記帳的模型",
+    "type": "list",
+    "hint": "填模型 ID，每個一行。留空自動記所有 api_base 是 deepseek.com 的模型。每把密鑰分開查餘額、分開算花費",
+    "default": []
+  },
+  "labels": {
+    "description": "模型的顯示名",
+    "type": "list",
+    "hint": "一行一個「模型ID=名字」，例如 deepseek-dm=私聊。留空按門禁插件的配置自動起名（哪些群、私聊用它）",
+    "default": []
+  },
+  "track_all_calls": {
+    "description": "記錄後台呼叫的用量",
+    "type": "bool",
+    "hint": "給每個模型的呼叫套一層，記下記憶總結、人物卡、日報這些後台活各用了哪把密鑰、多少 token。關掉就只能算聊天回覆",
+    "default": true
+  },
+  "alert_at": {
+    "description": "餘額提醒門檻（元）",
+    "type": "float",
+    "hint": "餘額低於它私信主人一次，再低於一半再提醒一次；填 0 不提醒",
+    "default": 10.0
+  },
+  "image_price": {
+    "description": "畫圖單價（元/張）",
+    "type": "float",
+    "hint": "畫圖中轉站沒有賬單介面，按「畫了幾張 × 單價」估算",
+    "default": 0.3
+  },
+  "price_input_miss": {
+    "description": "輸入單價·未命中快取（元/百萬 tokens）",
+    "type": "float",
+    "hint": "用來估算聊天花了多少，按你用的模型的官方價填",
+    "default": 1.0
+  },
+  "price_input_hit": {
+    "description": "輸入單價·命中快取（元/百萬 tokens）",
+    "type": "float",
+    "default": 0.02
+  },
+  "price_output": {
+    "description": "輸出單價（元/百萬 tokens）",
+    "type": "float",
+    "default": 4.0
+  },
+  "peak_double": {
+    "description": "尖峰時段價格翻倍",
+    "type": "bool",
+    "hint": "DeepSeek 官方：工作日 9-12、14-18 點（北京時間）價格翻倍",
+    "default": true
+  },
+  "owner_qq": {
+    "description": "主人 QQ（留空用門禁插件裡填的）",
+    "type": "list",
+    "default": []
+  }
+}

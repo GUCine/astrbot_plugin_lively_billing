@@ -1,0 +1,2 @@
+aiohttp>=3.9
+opencc-python-reimplemented>=0.1.7  # 發給主人的訊息轉繁體；沒裝就維持簡體
