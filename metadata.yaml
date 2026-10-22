@@ -8,6 +8,7 @@ repo: https://github.com/GUCine/astrbot_plugin_lively_billing
 support_platforms:
   - aiocqhttp
 astrbot_version: ">=4.29.0"
+category: 工具
 tags:
   - DeepSeek
   - 記帳
