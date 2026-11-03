@@ -1,5 +1,7 @@
 # Oblatio · DeepSeek 用量帳本
 
+![面板里的饭钱页（隐私模式）](docs/bill.png)
+
 > DeepSeek 餘額每小時記帳：每天真實花費、聊天/後臺/畫圖分項、餘額不足私信主人
 
 AstrBot 插件，屬於「擬真群友」（lively）插件套件。適用 AstrBot >=4.29.0 + NapCat（aiocqhttp）。
