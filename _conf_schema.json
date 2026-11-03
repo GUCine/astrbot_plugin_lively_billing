@@ -17,6 +17,12 @@
     "hint": "給每個模型的呼叫套一層，記下記憶總結、人物卡、日報這些後台活各用了哪把密鑰、多少 token。關掉就只能算聊天回覆",
     "default": true
   },
+  "track_users": {
+    "description": "按人記聊天回覆的用量",
+    "type": "bool",
+    "hint": "記下每次聊天回覆是誰觸發的（群裡說話的人、私聊的人）、用了多少 token，面板「饭钱」頁按人看花費和什麼時候來。只記 QQ 號、群名片和 token 數，不記聊天內容",
+    "default": true
+  },
   "alert_at": {
     "description": "餘額提醒門檻（元）",
     "type": "float",
@@ -28,6 +34,12 @@
     "type": "float",
     "hint": "畫圖中轉站沒有賬單介面，按「畫了幾張 × 單價」估算",
     "default": 0.3
+  },
+  "voice_price_10k": {
+    "description": "語音單價（元/1 萬點）",
+    "type": "float",
+    "hint": "BreezeBlue 按點數扣，這裡把點數估成錢；充值價 $3＝1 萬點約 ¥21.6，按月包的話照月包價 ÷ 每期點數 × 1 萬。實際以 BreezeBlue 的 Subscription 頁、生成前的確認為準",
+    "default": 21.6
   },
   "price_input_miss": {
     "description": "輸入單價·未命中快取（元/百萬 tokens）",
@@ -51,9 +63,51 @@
     "hint": "DeepSeek 官方：工作日 9-12、14-18 點（北京時間）價格翻倍",
     "default": true
   },
+  "prompt_dump": {
+    "description": "提示詞留檔（除錯用）",
+    "type": "bool",
+    "hint": "打開後把主人私聊每次真的送給模型的整份內容（system、歷史、這一輪、工具定義）和回覆、思考存在 plugin_data 的 prompts/ 裡，用來查「哪句提示詞讓她說出哪句話」。會把對話全文存在伺服器上。也可以私信「饭钱 留档 开/关/状态」",
+    "default": false
+  },
+  "prompt_dump_hours": {
+    "description": "留檔開多久自動關（小時）",
+    "type": "float",
+    "hint": "免得忘了一直開著；填 0 不自動關",
+    "default": 48
+  },
+  "prompt_dump_days": {
+    "description": "留檔留幾天",
+    "type": "int",
+    "hint": "每小時把更舊的日檔和沒人引用的 system、工具定義刪掉",
+    "default": 3
+  },
+  "prompt_dump_qq": {
+    "description": "留誰的私聊",
+    "type": "list",
+    "hint": "QQ 號，每個一行；留空就是主人。群聊不存（裡面是別人的話）",
+    "default": []
+  },
+  "prompt_dump_heartbeat": {
+    "description": "留檔也存自主插件的心跳",
+    "type": "bool",
+    "hint": "自主插件自己有 views.jsonl，一般不用開",
+    "default": false
+  },
   "owner_qq": {
     "description": "主人 QQ（留空用門禁插件裡填的）",
     "type": "list",
+    "default": []
+  },
+  "provider_prices": {
+    "description": "單獨算價的模型設定",
+    "type": "list",
+    "hint": "不扣 DeepSeek 餘額的模型設定（例如走別家帳號的），一行「模型設定ID=未命中,命中,輸出」元/百萬 tokens；只寫一個 0 就是不算錢，例如「workbuddy-flash=0」。沒寫的都按上面的 DeepSeek 單價算",
+    "default": []
+  },
+  "pid_who": {
+    "description": "認不出是誰調的模型時按模型設定認",
+    "type": "list",
+    "hint": "別的插件在自己開的任務裡調模型時，呼叫棧只看得到 AstrBot、認不出是哪個插件。一行「模型設定ID=插件名」（插件名寫不寫 astrbot_plugin_ 都行），用這個模型設定、又不是 AstrBot 自己看圖或壓縮歷史的，就記成這個插件。例如群分析插件取話題用的模型設定：「deepseek-flash=qq_group_daily_analysis」",
     "default": []
   }
 }

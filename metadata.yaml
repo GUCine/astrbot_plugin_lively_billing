@@ -1,8 +1,9 @@
 name: astrbot_plugin_lively_billing
-display_name: DeepSeek 用量帳本
+display_name: Oblatio
+cn_name: 飯錢  # 中文名：她的本領清單、面板這些中文的地方用（10-31 用戶定插件名用拉丁名、中文名照舊）
 desc: DeepSeek 餘額每小時記帳：每天真實花費、聊天/後臺/畫圖分項、餘額不足私信主人
 short_desc: DeepSeek 每把密鑰分開記帳，每天真實花費，餘額不足提醒
-version: 2.0.0
+version: 2.5.0
 author: GUCine
 repo: https://github.com/GUCine/astrbot_plugin_lively_billing
 support_platforms:
