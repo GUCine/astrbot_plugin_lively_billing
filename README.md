@@ -1,4 +1,4 @@
-# DeepSeek 用量帳本
+# Oblatio · DeepSeek 用量帳本
 
 > DeepSeek 餘額每小時記帳：每天真實花費、聊天/後臺/畫圖分項、餘額不足私信主人
 
